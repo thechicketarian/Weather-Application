@@ -113,13 +113,43 @@ p {
 }
 
 footer {
+    font-size: 15px;
     text-align: center;
     display: flex;
     align-items: center;
-    justify-content: center;
+    /* justify-content: space-between; */
+    margin-right: 50px;
+    margin-left: 50px;
 }
-footer a {
+.footerItems {
+    text-decoration: underline wavy 1px;
     color: black;
     background-color: white;
     font-size: 13px;
+    margin-right: 20px;
+    padding: 5px 10px 5px 10px;
+
+}
+
+/* mobile  */
+
+@media only screen and (max-width: 915px) { 
+    main {
+        flex-direction: column;
+    }
+.cityForm{
+    width: 100%;
+}
+#informationContainer {
+    width: 100%;
+}
+footer{
+    align-items: center;
+}
+.footerItemsImg {
+    padding: 0 auto;
+}
+.footerItems {
+    padding: 5px 5px 5px 5px;
+}
 }
