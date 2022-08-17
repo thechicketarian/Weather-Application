@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1 class="header"> Weather App </h1>
+
+    <main> 
+    <!-- form component -->
+    <form class="cityForm">
+<label for="site-search"> <h2 class="hTitle"> Search By City </h2></label>
+<input type="search" id="city" name="City" placeholder="type your city: Austin">
+<button class="btnClass" id="searchBtn"> search </button>
+<hr class="hr">
+<p class="searchStorage"> previous searches: </p>
+    </form>
+    <!-- api fetch request component -->
+    <div id="informationContainer"> 
+    <div class="apiCityContainer">
+    <h2 class="hTitle"> City Goes Here </h2>
+    <ul> 
+        <li> 45•</li>
+        <li> cloudy </li>
+        <li> cloudy </li>
+    </ul>
+    </div>  
+    <h3 class="hTitle"> 5 Day Forecast </h3>
+    <div class="fiveDayContainer">
+    <div class="apiBoxes" id="forecastBox"> Mon:  </div>    
+    <!-- <div class="apiBoxes" id="forecastBox"> Tues</div>  
+    <div class="apiBoxes" id="forecastBox">  Wed </div>  
+    <div class="apiBoxes" id="forecastBox"> Thurs</div>  
+    <div class="apiBoxes" id="forecastBox"> Fri  </div>   -->
+    </div>
+    </div>
+    </main>
+
+
+    <!-- JS Scripts -->
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/fetch.js"></script>
+    <footer>   <img src="./assets/images/sun.svg">   <a href="https://www.iconfinder.com/iconsets/weatherful" title="weatherful icons"> icons</a> 
+        <a href="#"> Repo </a>
+        <p> theChicketarian co</p>
+    </footer>
+
+</body>
+</html>
