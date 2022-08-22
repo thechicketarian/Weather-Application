@@ -33,7 +33,7 @@ main{
     border: 20px solid rgb(58 55 93);
   
 }
-h1, h2, h3 {
+h1, h2, h3, h4 {
     letter-spacing: 1.7px;
     font-weight: 600;
 }
@@ -57,6 +57,10 @@ p {
     font-weight: 400;
 }
 
+ul {
+    list-style-type: none;
+}
+
 .hr {
     border: 2px solid rgb(57 55 93);
     margin-top:10px;
@@ -74,7 +78,7 @@ p {
     padding: 30px;
     border-right: solid 6px rgb(57 55 93);
     width: 30%;
-    height: 60vh;
+    /* height: 100vh; */
 }
 
 .btnClass {
@@ -130,6 +134,19 @@ footer {
     padding: 5px 10px 5px 10px;
 
 }
+
+/* Weather Cards */
+
+.nameIconContainer {
+    display: flex;
+    align-items: center;
+    font-weight: bolder;
+}
+
+.nameIconContainer img {
+    width: 30px;
+}
+
 
 /* mobile  */
 
