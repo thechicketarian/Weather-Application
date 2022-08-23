@@ -64,6 +64,8 @@ nameli.appendChild(iconli)
 //retrieving local stored object
 var dataToUse5Day = JSON.parse(localStorage.getItem("5DayWeather"));
 
+console.log("Issues with City Location", dataToUse)
+
 // setting empty array
 newFiveDayArray = [];
 
@@ -78,12 +80,8 @@ var fiveDayInfo = {
     humidity: dataToUse5Day.list[i].main.humidity 
 }
 
-
 newFiveDayArray.push(fiveDayInfo);
-
 };
-
-console.log("New Five", newFiveDayArray)
 
 //sliced the final 5 day forecase data here
 var spliced5 = newFiveDayArray.filter(specificDays); 
@@ -155,14 +153,6 @@ dataContainer.appendChild(fiveHumidity)
 document.getElementById("forecastBox").appendChild(dataContainer)
 
 };
-
-savedSearchesArray= []
-
-var storedCities = localStorage.getItem("cityInput");
-
-savedSearchesArray.push(storedCities)
-
-console.log("maybe cities?", savedSearchesArray)
 
 
 } //end of main data

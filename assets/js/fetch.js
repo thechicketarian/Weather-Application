@@ -1,18 +1,33 @@
 var city = document.querySelector("#city");
 var searchBtn = document.querySelector("#searchBtn")
 
-//need to set up locale storate
+//need to set up locale storage
 searchBtn.addEventListener("click", saveInput)
+
+//save all cities empty array
+savedSearchesArray= []
 
 function saveInput(event) {
     event.preventDefault();
 
     var cityName = document.querySelector("#city").value
 
+    if (cityName === "") {
+        alert("Please Input a Valid City");
+      }
+    
     window.localStorage.setItem("cityInput", cityName)
-    console.log(cityName)
+
+    //pushed input into a save array
+    savedSearchesArray.push(cityName);
+
+    console.log("Saved Searches Array", savedSearchesArray)
+    window.localStorage.setItem("storedCities", JSON.stringify(savedSearchesArray))
+    
+    // console.log(cityName)
 
     getApi();
+
 }
 
 function getApi(){
@@ -70,7 +85,7 @@ function getApi(){
         return response.json();
     })
     .then(function(weatherData5) {
-        // console.log("5 Day Weather Cast Fetched", weatherData5)
+        console.log("5 Day Weather Cast Fetched", weatherData5)
 
         window.localStorage.setItem("5DayWeather",JSON.stringify(weatherData5))
 
