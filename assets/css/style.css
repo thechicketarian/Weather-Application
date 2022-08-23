@@ -31,6 +31,7 @@ main{
     margin-left: 50px;
     display: flex;
     border: 20px solid rgb(58 55 93);
+    /* height: 100vh; */
   
 }
 h1, h2, h3, h4 {
@@ -78,7 +79,7 @@ ul {
     padding: 30px;
     border-right: solid 6px rgb(57 55 93);
     width: 30%;
-    /* height: 100vh; */
+
 }
 
 .btnClass {
@@ -107,13 +108,32 @@ ul {
 
 #informationContainer{
     padding: 30px;
-    width: 50%;
-    height: 60vh;
+    /* width: 50%;
+    height: 60vh; */
 }
 
-#fiveDayContainer {
+/* #fiveDayContainer {
     display: flex;
     justify-content: space-between;
+} */
+
+#forecastBox {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#dynamicFive {
+    background: #b6d4e3;
+    padding: 20px;
+    margin:10px;
+}
+
+#dynamicFive li {
+    list-style-type: none;
+}
+
+#dynamicFive img {
+    width: 30px;
 }
 
 footer {

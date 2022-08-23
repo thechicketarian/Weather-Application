@@ -17,7 +17,7 @@ function saveInput(event) {
 
 function getApi(){
 
-    var APIKEY = "beec4d940ac803d57dd446ac62705e89";
+    let APIKEY = "beec4d940ac803d57dd446ac62705e89";
 
     var cityFromLocalStorage = localStorage.getItem("cityInput");
 
@@ -41,15 +41,17 @@ function getApi(){
     var currentLon = weatherData.coord.lon
     
     window.localStorage.setItem("currentLatitude", currentLat)
-    window.localStorage.setItem("currentLongitude",currentLon)
+    window.localStorage.setItem("currentLongitude", currentLon)
 
     var latStored = localStorage.getItem("currentLatitude");
     var lonStored = localStorage.getItem("currentLongitude")
 
     //weather api: uvi 
-    // var requestUVI = 'https://api.openweathermap.org/data/2.5/onecall?lat='+latStored+'&lon='+lonStored+'&appid='+APIKEY+'&units=imperial' 
+    // var requestOneCall = 'https://api.openweathermap.org/data/2.5/onecall?lat='+latStored+'&lon='+lonStored+'&exclude=hourly,daily&appid='+APIKEY+'&units=imperial'; 
 
-    // fetch(requestUVI)
+    // console.log(requestOneCall)
+
+    // fetch(requestOneCall)
     // .then(function(response){
     //     return response.json();
     // })
@@ -60,14 +62,15 @@ function getApi(){
     // });
 
   // weather api: 5 day Forecast
-    var request5Day = 'https://api.openweathermap.org/data/2.5/forecast?lat='+latStored+'&lon='+lonStored+'&appid='+APIKEY+'&units=imperial'
+
+  var request5Day = 'https://api.openweathermap.org/data/2.5/forecast?lat='+latStored+'&lon='+lonStored+'&appid='+APIKEY+'&units=imperial'
     
     fetch(request5Day)
     .then(function(response){
         return response.json();
     })
     .then(function(weatherData5) {
-        console.log("5 Day Weather Cast Fetched", weatherData5)
+        // console.log("5 Day Weather Cast Fetched", weatherData5)
 
         window.localStorage.setItem("5DayWeather",JSON.stringify(weatherData5))
 
@@ -75,6 +78,7 @@ function getApi(){
 
             // calling mainData function from script.js
             mainData();
+            
 
     }); //end of weatherAPI
 
