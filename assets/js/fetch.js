@@ -11,14 +11,15 @@ function saveInput(event) {
     event.preventDefault();
 
     var cityName = document.querySelector("#city").value
-    //if no input alert the user that the city needs to be valid
-    if (cityName === "") {
-        alert("Please Input a Valid City");
-        return;
-      }
     
     //stores city input
     window.localStorage.setItem("cityInput", cityName)
+
+        //if no input alert the user that the city needs to be valid
+        if (cityName === "") {
+            alert("Please Input a Valid City");
+            return;
+          }
 
     // console.log(cityName)
 
