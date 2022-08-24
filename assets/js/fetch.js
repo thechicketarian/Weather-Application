@@ -11,24 +11,20 @@ function saveInput(event) {
     event.preventDefault();
 
     var cityName = document.querySelector("#city").value
-
+    //if no input alert the user that the city needs to be valid
     if (cityName === "") {
         alert("Please Input a Valid City");
+        return;
       }
     
+    //stores city input
     window.localStorage.setItem("cityInput", cityName)
 
-    //pushed input into a save array
-    savedSearchesArray.push(cityName);
-
-    console.log("Saved Searches Array", savedSearchesArray)
-    window.localStorage.setItem("storedCities", JSON.stringify(savedSearchesArray))
-    
     // console.log(cityName)
 
     getApi();
-
 }
+
 
 function getApi(){
 
@@ -46,7 +42,7 @@ function getApi(){
         return response.json();
     })
     .then(function(weatherData) {
-        console.log("Weather Data Fetched", weatherData)
+        // console.log("Weather Data Fetched", weatherData)
 
         window.localStorage.setItem("weatherForCities",JSON.stringify(weatherData))
 
@@ -85,21 +81,15 @@ function getApi(){
         return response.json();
     })
     .then(function(weatherData5) {
-        console.log("5 Day Weather Cast Fetched", weatherData5)
+        console.log("Fetch.JS API CALL", weatherData5)
+        console.log("Current Fetched City:", weatherData5.city.name)
 
         window.localStorage.setItem("5DayWeather",JSON.stringify(weatherData5))
+        mainData(); 
 
-    });
-
-            // calling mainData function from script.js
-            mainData();
-            
+    }); //end of forecast API
 
     }); //end of weatherAPI
 
-    
-    
-
-    //end of api function
-}
+}    //end of api function
 

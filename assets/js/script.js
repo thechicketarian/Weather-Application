@@ -64,7 +64,8 @@ nameli.appendChild(iconli)
 //retrieving local stored object
 var dataToUse5Day = JSON.parse(localStorage.getItem("5DayWeather"));
 
-console.log("Issues with City Location", dataToUse)
+console.log("Raw Data City:", dataToUse5Day.city.name)
+console.log("Raw Data Temp:", dataToUse5Day.list[0].main.temp)
 
 // setting empty array
 newFiveDayArray = [];
@@ -77,11 +78,16 @@ var fiveDayInfo = {
     icon: dataToUse5Day.list[i].weather[0].icon,
     temp: dataToUse5Day.list[i].main.temp,
     wind: dataToUse5Day.list[i].wind.speed,
-    humidity: dataToUse5Day.list[i].main.humidity 
+    humidity: dataToUse5Day.list[i].main.humidity, 
 }
+
+console.log("Five Day Info Temp",fiveDayInfo.temp[0])
 
 newFiveDayArray.push(fiveDayInfo);
 };
+
+console.log("line85 Fetched ALL:", newFiveDayArray)
+console.log("line85 Fetched City:", newFiveDayArray.temp)
 
 //sliced the final 5 day forecase data here
 var spliced5 = newFiveDayArray.filter(specificDays); 
@@ -121,8 +127,9 @@ var fiveDate = document.createElement("li")
 var fiveTemp = document.createElement("li")
 var fiveWind = document.createElement("li"
 )
-var fiveHumidity = document.createElement("li"
-)
+var fiveHumidity = document.createElement("li")
+var fiveNamei = document.createElement('h5')
+
 var fiveIcon = document.createElement('img')
 
 //weather icons 
@@ -135,13 +142,15 @@ var dateFormat = moment(finalData[i].date).format("MM/D/YY");
 
 var displayFiveTemp = document.createTextNode("Temp: "+finalData[i].temp);
 var displayFiveDate = document.createTextNode("Day: " + dateFormat);
-var displayFiveWind = document.createTextNode("Wind: " + dataToUse5Day.list[i].wind.speed + " MPH")
-var displayFiveHumidity = document.createTextNode("Humidity: " + dataToUse5Day.list[i].main.humidity + " %" )
+var displayFiveWind = document.createTextNode("Wind: " + finalData[i].wind + " mph ")
+var displayFiveHumidity = document.createTextNode("Humidity: " + finalData[i].humidity + " %" )
+var displayCityName = document.createTextNode(dataToUse5Day.city.name)
 
 fiveDate.appendChild(displayFiveDate)
 fiveTemp.appendChild(displayFiveTemp)
 fiveWind.appendChild(displayFiveWind)
 fiveHumidity.appendChild(displayFiveHumidity)
+fiveNamei.appendChild(displayCityName)
 
 
 dataContainer.appendChild(fiveDate)
@@ -149,6 +158,7 @@ dataContainer.appendChild(fiveIcon)
 dataContainer.appendChild(fiveTemp)
 dataContainer.appendChild(fiveWind)
 dataContainer.appendChild(fiveHumidity)
+dataContainer.appendChild(fiveNamei)
 
 document.getElementById("forecastBox").appendChild(dataContainer)
 
@@ -158,3 +168,9 @@ document.getElementById("forecastBox").appendChild(dataContainer)
 } //end of main data
 
 
+
+    //pushed input into a save array
+    // savedSearchesArray.push(cityName);
+
+    // console.log("Saved Searches Array", savedSearchesArray)
+    // window.localStorage.setItem("storedCities", JSON.stringify(savedSearchesArray))
