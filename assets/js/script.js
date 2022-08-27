@@ -1,5 +1,6 @@
 function mainData() {
 
+document.getElementById("cityInfoContainer").innerHTML = null;
 //regular weather data
 var dataToUse = JSON.parse(localStorage.getItem("weatherForCities"));
 
@@ -62,6 +63,9 @@ nameli.appendChild(iconli)
 // -------------------------------------------------------------------------------
 // 5 DAY FORECAST DATA 
 //retrieving local stored object
+
+
+document.getElementById("forecastBox").innerHTML = null;
 var dataToUse5Day = JSON.parse(localStorage.getItem("5DayWeather"));
 
 console.log("Raw Data City:", dataToUse5Day.city.name)
