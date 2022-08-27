@@ -10,8 +10,6 @@ The user is able to search in the city box and the information will dynamically 
 
 One of the challenges I faced was retrieving the stored city inputs from local storage and adding them to the 'recent' searched field.
 
-Antoher challenge I came across was duplicated API calls. Once a user inputs a new city, the old information does not replace. I'm still trying to fix this. 
-
 ### Mockup
 
 ![alt Weather Dashboard](assets/images/mockup.jpg)
